@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(n1, n2){
+            let result = n1 + n2
+            return result
+        }
+
+        let result = sum(1, 4)
+        console.log(result)
+
+
+        //arguments
+
+        function sum(){
+            let res = 0
+
+            for (const n of arguments){
+                res += n
+            }
+            return res
+        }
+
+        console.log(sum(1, 2, 20, 25))
+ 
+
+
+
+        const mult = function (n){
+            n*=n
+            return n 
+        }
+
+        console.log(mult(10))
+
+// arrow functions
+// com uma linha não precisa de return
+const multi =  (n) => (n*=n)
+
+console.log(multi(10))
+
+
+//com o adicionamento da chave é necessário o return
+const multip = function (n){
+            n*=n
+            return n 
+        }
+
+console.log(multip(10))
+
+
+
+
+
+
+    </script>
+</body>
+</html>

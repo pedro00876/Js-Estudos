@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+//strinng <--> array
+
+let name = "Pedro Elias"
+
+console.log([0])
+
+for(const v of name ){
+    console.log(v)
+}
+
+console.log(name.split(" "))
+
+
+
+
+
+
+// casas decimais
+
+
+    // toFixed()
+    // Math.ceil()
+    // Math.floor()
+    // Math.round()
+    // new Intl.NumberFormat().format()
+    let value = 1234.255
+
+    console.log(value.toFixed(2))
+    console.log(Math.ceil(value))
+    console.log(Math.floor(value))
+    console.log(Math.round(value))
+    console.log(
+      new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(value)
+    )
+  
+
+    //contagem de dígitos
+
+    let nome = 'Pedro Elias'
+    let num = 1223345
+
+    console.log(nome.length)
+    console.log(String(num).length)
+
+
+
+
+
+
+
+
+    //separando e juntando strings
+
+    let nomi = "Eu sou um cara legal!!"
+
+    console.clog(nomi.split(" ").join('-') )
+
+
+
+
+
+//maiúsculas e minúsculas
+
+let frase = "O dia está bonito!!"
+
+console.log(frase.toLowerCase())
+console.log(frase.toUpperCase()) // nivelar frases no BD
+
+
+
+
+//localizando string
+
+let frases = 'Eu sou um cara legal'
+
+console.log(frases.toLowerCase().includes())
+
+
+
+//substituir uma string
+
+let fras = 'Pedro era um cara legal!'
+
+console.log(fras.replace('Pedro', 'Jonas'))
+
+
+
+
+
+
+//convertendo JSON
+
+    // JSON - JavaScript Object Notation
+    // JSON.stringify()
+    // JSON.parse()
+
+    const people = [
+      {
+        id: 1,
+        name: "Felipe",
+        lastName: "Fontoura",
+        bornDate: new Date(1982, 1, 18),
+        address: {
+          city: "São José dos Campos",
+        },
+      },
+      {
+        id: 2,
+        name: "Eduardo",
+        lastName: "Moraes",
+        bornDate: new Date(2001, 3, 5),
+        address: {
+          city: "Recife",
+        },
+      },
+    ]
+    console.log(JSON.stringify(people)) // conversão obj -> string / JSON
+
+    
+
+    // concatenação
+
+    
+    let set1 = [1, 2, 3, 4, 5]
+    let set2 = [6, 7, 8, 9, 10]
+    let set3 = [11, 12]
+
+    console.log(set1 + set2) // na prática cria uma string (coersion)
+    console.log([set1, set2]) // cria um novo array com 2 sub-arrays dentro
+
+    console.log(set1.concat(set2).concat(set3)) // cria um novo array concatenado / somado
+  
+
+    // desestruturação
+
+    
+
+
+
+    //reduce
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

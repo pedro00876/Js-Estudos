@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //separando e juntando strings
+
+    let nomi = "Eu sou um cara legal!!"
+
+    console.log(nomi.split(" ").join('-') )
+
+
+
+
+
+//maiúsculas e minúsculas
+
+let frase = "O dia está bonito!!"
+
+console.log(frase.toLowerCase())
+console.log(frase.toUpperCase()) // nivelar frases no BD
+
+
+
+
+//localizando string
+
+let frases = 'Eu sou um cara legal'
+
+console.log(frases.toLowerCase().includes())
+
+
+
+//substituir uma string
+
+let fras = 'Pedro era um cara legal!'
+
+console.log(fras.replace('Pedro', 'Jonas'))
+
+
+
+
+
+
+//convertendo JSON
+
+    // JSON - JavaScript Object Notation
+    // JSON.stringify()
+    // JSON.parse()
+
+    const people = [
+      {
+        id: 1,
+        name: "Felipe",
+        lastName: "Fontoura",
+        bornDate: new Date(1982, 1, 18),
+        address: {
+          city: "São José dos Campos",
+        },
+      },
+      {
+        id: 2,
+        name: "Eduardo",
+        lastName: "Moraes",
+        bornDate: new Date(2001, 3, 5),
+        address: {
+          city: "Recife",
+        },
+      },
+    ]
+    console.log(JSON.stringify(people)) // conversão obj -> string / JSON
+
+    
+
+    // concatenação
+
+    
+    let set1 = [1, 2, 3, 4, 5]
+    let set2 = [6, 7, 8, 9, 10]
+    let set3 = [11, 12]
+
+    console.log(set1 + set2) // na prática cria uma string (coersion)
+    console.log([set1, set2]) // cria um novo array com 2 sub-arrays dentro
+
+    console.log(set1.concat(set2).concat(set3)) // cria um novo array concatenado / somado
+  
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+    
+        <h1 id="person-name" class="text">Seu Nome</h1>
+        <h2>Programador JavaScript</h2>
+        <img src="foto.png" width="100"><p class="text">
+          Conhecimento em programação Frontend, Backend para desenvolvimento de
+          sistemas Fullstack.
+        </p>
+        <p> 
+          Para mais detalhes, por favor, visite meu
+          <a href="https://github.com/felipefontoura">Github</a>.
+        </p>
+        <script>
+          // Hierarquia do DOM
+          // Document --> Nodes --> Elements --> Attributes
+    
+          // console.log(document) // certo
+          // console.log(document.body) // certo
+          // console.log(document.body.h1) // errado
+    
+          // Acessando os nós do DOM
+    
+          // document.getElementById()
+          // const titleEl = document.getElementById("person-name")
+          // console.log("titleEl", titleEl)
+    
+          // document.getElementByTagName()
+          // const titleEl = document.getElementsByTagName("h1")
+          // console.log("titleEl", titleEl)
+    
+          // document.getElementsByClassName()
+          // const textEl = document.getElementsByClassName("text")
+          // console.log("textEl", textEl)
+    
+          // Iterando...
+          // for (const el of textEl) {
+          //   console.log("el", el)
+          // }
+          
+
+
+
+
+     // DOM Moderno
+
+      // Forma moderna...
+      // document.querySelector('selector')
+      // document.querySelectorAll('selector')
+      // element.querySelector('selector')
+      // element.querySelectorAll('selector')
+
+      // CSS Seletors
+      // Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors
+
+      // Universal: *
+      // Id: #el-id
+      // Tag: <el>
+      // Class: .el-class
+      // Atributos: [attr=value]
+      // Grupos (vírgula): el,el
+      // Descendentes (espaço): el el
+      // Childs (>): el > el
+
+      // console.log("*", document.querySelectorAll("*"))
+      // console.log("id", document.querySelector("#person-name"))
+      // console.log("tag", document.querySelectorAll("p"))
+      // console.log("class", document.querySelectorAll(".text"))
+      // console.log("attr", document.querySelectorAll("a[href]"))
+      // console.log(
+      //   "attr",
+      //   document.querySelectorAll("a[href='https://devsamurai.com.br']")
+      // )
+
+      // Iterando toda a árvore DOM...
+      // for (const el of document.querySelectorAll("*")) {
+      //   console.log("el", el)
+      // }
+    
+
+
+
+      // Alterando um objeto do DOM
+      // Ref.: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+
+      const titleEl = document.querySelector("#person-name")
+      console.log("titleEl value:", titleEl.innerHTML)
+
+      titleEl.innerHTML = "Felipe Fontoura"
+      titleEl.style.color = "red"
+    
+
+
+
+      
+      // Criando elementos dinamicamente no DOM
+      // Ref.: https://developer.mozilla.org/pt-BR/docs/Web/API/Document/createElement
+
+      const subTitleEl = document.createElement("h2")
+      subTitleEl.innerHTML = "Projetos"
+
+      const pjListEl = document.createElement("ul")
+
+      const pjListItem1El = document.createElement("li")
+      pjListItem1El.innerHTML = "TODO MVC"
+
+      const pjListItem2El = document.createElement("li")
+      pjListItem2El.innerHTML = "Github API"
+
+      const pjListItem3El = document.createElement("li")
+      pjListItem3El.innerHTML = "eCommerce"
+
+      pjListEl.append(pjListItem1El)
+      pjListEl.append(pjListItem2El)
+      pjListEl.append(pjListItem3El)
+
+      document.body.append(subTitleEl)
+      document.body.append(pjListEl)
+
+      for (let i = 0; i < 3; i++) {
+        pjListItem3El.innerHTML = `eCommerce ${i}`
+      }
+    //DOMcontentLoaded
+
+    
+      // neste momento da execução o elemento #title ainda não existe...
+      // const el = document.getElementById("title")
+      // console.log("el", el)
+
+      // o evento DOMContentLoaded garante que a função seja executada após a página carregada.
+      // https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
+      document.addEventListener("DOMContentLoaded", () => {
+        const el = document.getElementById("title")
+        console.log("el", el)
+      })
+    
+
+      //DOM click mouse
+
+      
+      // https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+
+      const button = document.querySelector("button")
+      button.addEventListener("click", () => {
+        console.log("Clicou no botão")
+      })
+
+      const hyperlink = document.querySelector("a")
+      hyperlink.addEventListener("click", (event) => {
+        event.preventDefault()
+        console.log("Clicou no hyperlink")
+      })
+    
+
+      //keydown and keyup
+
+      
+      // https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event
+
+      const inputEl = document.querySelector("input[type=text]")
+
+      inputEl.addEventListener("keydown", (event) => {
+        console.log("event", `${event.key} - ${event.keyCode}`)
+
+        if (event.keyCode === 13) {
+          alert(`Tecla ENTER pressionada - ${inputEl.value}`) // evento de enviar o texto
+        }
+      })
+    
+
+
+      //submit
+
+      
+      // https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
+
+      const formEl = document.querySelector("form")
+
+      formEl.addEventListener("submit", (event) => {
+        const queryValue = event.target.querySelector("input[name=q]").value
+        console.log("queryValue", queryValue)
+
+        if (!queryValue) {
+          event.preventDefault()
+          alert("O campo busca é obrigatório.")
+        }
+      })
+    
+
+      //Style CSS
+
+      
+      // https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#index
+
+      const titleEl = document.querySelector("#title")
+
+      const buttonEl = document.querySelector("#change-color")
+      buttonEl.addEventListener("click", () => {
+        titleEl.style = "color: red; font-size: 55px"
+        // titleEl.style.color = "red"
+        // titleEl.style.fontSize = "55px"
+      })
+    
+
+      //class css
+
+      
+      // https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#index
+
+      const titleEl = document.querySelector("#title")
+
+      const buttonEi = document.querySelector("#change-class")
+      buttonEi.addEventListener("click", () => {
+        // if (titleEl.classList.contains("highlight")) {
+        //   titleEl.classList.remove("highlight")
+        // } else {
+        //   titleEl.classList.add("highlight")
+        // }
+
+        titleEl.classList.toggle("highlight")
+      })
+    
+
+        </script>
+      
+
+
+
+
+      
+    
+    </body>
+</body>
+</html>
