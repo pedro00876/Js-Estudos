@@ -6,3 +6,5 @@ if(pessoaUm >= idadeMinima){
 } else{
     alert( 'acesso NÃO autorizado' )
 }
+
+aak
